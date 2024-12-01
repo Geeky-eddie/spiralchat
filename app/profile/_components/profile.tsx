@@ -169,4 +169,4 @@ export default function ProfileComponent({ preloadedUserInfo }: {
       </div>
     </>
   )
-}
+}  
