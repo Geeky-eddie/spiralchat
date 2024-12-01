@@ -18,8 +18,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Not Whatsapp Clone",
-  description: "Built with Next.js and Convex.",
+  title: "Spiral Chat",
+  description: "Highest level of privacy and security for your conversations.",
 };
 
 export default function RootLayout({

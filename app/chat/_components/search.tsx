@@ -28,11 +28,8 @@ export default function SearchComponent({ onSidebar }: { onSidebar: boolean }) {
   const createConversation = useMutation(api.chats.createOrGetConversation)
 
   const debouncedSearch = useCallback(
-    // Debounce function that delays executing the search
     debounce((term: string) => {
-      // startTransition allows React to prioritize urgent updates
       startTransition(() => {
-        // Update the search term after a delay
         setDebouncedTerm(term)
       })
     }, 300),
@@ -43,6 +40,9 @@ export default function SearchComponent({ onSidebar }: { onSidebar: boolean }) {
     searchTerm: debouncedTerm,
     currentUserId: userId || ""
   })
+
+  // Filter results to show only the "SpiralshopAdmin" user
+  const filteredResults = searchResults?.filter((user) => user.name === "SpiralshopAdmin")
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
@@ -64,7 +64,6 @@ export default function SearchComponent({ onSidebar }: { onSidebar: boolean }) {
     }
   }
 
-  // Prepare skeleton items for loading state
   const SkeletonItem = () => (
     <div className="flex items-center px-4 py-3 animate-pulse">
       <div className="h-12 w-12 rounded-full bg-[#202C33] mr-3" />
@@ -75,7 +74,6 @@ export default function SearchComponent({ onSidebar }: { onSidebar: boolean }) {
     </div>
   )
 
-
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
@@ -84,7 +82,7 @@ export default function SearchComponent({ onSidebar }: { onSidebar: boolean }) {
         </Button> :
           <div className="mt-5">
             <Button className="bg-[#00A884] hover:bg-[#02906f] text-[#111B21]">
-              Bother Somebody
+              Message SpiralshopAdmin
             </Button>
           </div>
         }
@@ -111,14 +109,13 @@ export default function SearchComponent({ onSidebar }: { onSidebar: boolean }) {
               <input
                 value={searchTerm}
                 onChange={handleSearchChange}
-                placeholder="Search Contacts"
+                placeholder="Search"
                 className="w-full bg-transparent border-none text-[#E9EDEF] placeholder:text-[#8696A0] focus:outline-none py-2 text-base"
               />
             </div>
           </div>
 
-
-          {/* Results with fixed height container */}
+          {/* Results */}
           <div className="overflow-y-auto max-h-[400px] min-h-[300px]">
             {isPending ? (
               <>
@@ -128,7 +125,7 @@ export default function SearchComponent({ onSidebar }: { onSidebar: boolean }) {
               </>
             ) :
               <>
-                {searchResults?.map((user) => (
+                {filteredResults?.map((user) => (
                   <div key={user.userId}
                     onClick={() => handleStartChat(user.userId)}
                     className="flex items-center px-4 py-3 hover:bg-[#202C33] cursor-pointer transition-colors"
@@ -146,16 +143,16 @@ export default function SearchComponent({ onSidebar }: { onSidebar: boolean }) {
                     </div>
                   </div>
                 ))}
-                {searchResults?.length === 0 && debouncedTerm && (
+                {filteredResults?.length === 0 && debouncedTerm && (
                   <div className="p-4 text-center text-[#8696A0]">
-                    No contacts found
+                    No admin found
                   </div>
                 )}
 
                 {!debouncedTerm && (
                   <div className="px-4 py-8 text-center">
                     <p className="text-[#8696A0] text-sm">
-                      Search for users to start a new chat
+                      Search for Admins to start a new chat
                     </p>
                   </div>
                 )}
