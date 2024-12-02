@@ -54,7 +54,7 @@ export default function Sidebar({ preloadedUserInfo, preloadedConversations }: S
 
 
   return (
-    <div className="w-[70px] md:w-[380px] lg:w-1/4 h-screen flex flex-col bg-background dark:bg-[#111B21] border-r border-border dark:border-[#313D45]">
+    <div className="w-[70px] md:w-[380px] lg:w-1/4 h-screen flex flex-col bg-background dark:bg-[#000] border-r border-border dark:border-[#313D45]">
       {/* Header */}
       <div className="shrink-0 px-3 py-[18px] md:py-[14px] bg-muted dark:bg-[#202C33] flex justify-center md:justify-between items-center">
         <Link href="/profile">
@@ -80,7 +80,7 @@ export default function Sidebar({ preloadedUserInfo, preloadedConversations }: S
         </div>
       </div>
       {/* Search Input */}
-      <div className="hidden md:block p-2 bg-[#111B21]">
+      <div className="hidden md:block p-2 bg-[#000]">
         <div className="relative bg-[#202C33] rounded-lg flex items-center">
           <div className="pl-4 pr-2 py-2">
             <Search className="h-5 w-5 text-[#8696A0]" />
@@ -149,7 +149,7 @@ const HighlightText = ({ text, searchQuery }: {
     <>
       {parts.map((part, i) => (
         part.toLowerCase() === searchQuery.toLowerCase() ?
-          <span key={i} className="bg-[#00A884] text-[#111B21] px-0.5 rounded">
+          <span key={i} className="bg-[#00A884] text-[#000] px-0.5 rounded">
             {part}
           </span>
           :

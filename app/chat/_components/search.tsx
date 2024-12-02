@@ -81,14 +81,14 @@ export default function SearchComponent({ onSidebar }: { onSidebar: boolean }) {
           <MessageSquareMore className="w-5 h-5" />
         </Button> :
           <div className="mt-5">
-            <Button className="bg-[#00A884] hover:bg-[#02906f] text-[#111B21]">
+            <Button className="bg-red-700 hover:bg-red-800 text-[#fff]">
               Message SpiralshopAdmin
             </Button>
           </div>
         }
       </DialogTrigger>
       <DialogTitle></DialogTitle>
-      <DialogContent className="w-full max-w-[380px] p-0 bg-[#111B21] border-[#313D45]">
+      <DialogContent className="w-full max-w-[380px] p-0 bg-[#000] border-[#313D45]">
         <DialogHeader className="p-0">
           {/* Header */}
           <div className="bg-[#202C33] p-4 flex items-center gap-4">
@@ -101,7 +101,7 @@ export default function SearchComponent({ onSidebar }: { onSidebar: boolean }) {
           </div>
 
           {/* Search Input */}
-          <div className="p-2 bg-[#111B21]">
+          <div className="p-2 bg-[#000]">
             <div className="relative bg-[#202C33] rounded-lg flex items-center">
               <div className="pl-4 pr-2 py-2">
                 <Search className="w-5 h-5 text-[#8696A0]" />

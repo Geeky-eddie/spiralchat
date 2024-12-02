@@ -24,7 +24,7 @@ export default function LoadingState() {
 
 
   return (
-    <div className="flex h-screen bg-[#111B21]">
+    <div className="flex h-screen bg-[#000]">
       <div className="flex-1 flex flex-col">
         <div className="flex-1 flex flex-col items-center justify-center gap-3">
           <svg
@@ -37,10 +37,10 @@ export default function LoadingState() {
             />
           </svg>
           <div className="text-center mb-8">
-            <h1 className="text-[#E9EDEF] text-xl font-light mb-1">WhatsApp</h1>
+            <h1 className="text-[#E9EDEF] text-xl font-light mb-1">Spiralchat</h1>
             <div className="flex items-center justify-center gap-2 text-[#8696A0]">
               <Lock className="w-3 h-3" />
-              <span className="text-sm">End-to-end encrypted (NOT REALLY)</span>
+              <span className="text-sm">End-to-end encrypted</span>
             </div>
           </div>
 

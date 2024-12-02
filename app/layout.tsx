@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Quicksand } from "next/font/google";
 import "./globals.css";
 import { ConvexClientProvider } from "@/components/providers/convex-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/providers/theme-provider";
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from "@/components/ui/sonner";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+// Configure the Quicksand font
+const quicksand = Quicksand({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"], // Specify the weights you need
+  display: "swap", // Ensures the text uses fallback fonts until the web font is loaded
 });
 
 export const metadata: Metadata = {
@@ -30,9 +26,7 @@ export default function RootLayout({
   return (
     <ClerkProvider dynamic>
       <html lang="en" suppressHydrationWarning>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
+        <body className={`${quicksand.className} antialiased`}>
           <ConvexClientProvider>
             <ThemeProvider
               attribute="class"

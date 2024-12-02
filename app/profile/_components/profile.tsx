@@ -104,7 +104,7 @@ export default function ProfileComponent({ preloadedUserInfo }: {
       <header className="bg-[#202C33] p-4 flex items-center">
         <Link href="/chat">
           <Button variant="ghost" size="icon" className="mr-4">
-            <ArrowLeft className="h-6 w-6 text-[#00A884]" />
+            <ArrowLeft className="h-6 w-6 text-red-700" />
           </Button>
         </Link>
         <h1 className="text-xl font-normal">Profile</h1>
@@ -118,7 +118,7 @@ export default function ProfileComponent({ preloadedUserInfo }: {
               <AvatarFallback>{userInfo?.name}</AvatarFallback>
             </Avatar>
             <label htmlFor="profile-image" className="absolute bottom-0 right-0 bg-[#00A884] rounded-full p-2 cursor-pointer">
-              <Camera className="w-6 h-6 text-[#111B21]" />
+              <Camera className="w-6 h-6 text-[#000]" />
               <input
                 id="profile-image"
                 type="file"

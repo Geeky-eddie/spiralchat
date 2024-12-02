@@ -11,7 +11,7 @@ export default async function ProfilePage() {
   })
 
   return (
-    <div className="flex flex-col h-screen bg-[#111B21] text-[#E9EDEF]">
+    <div className="flex flex-col h-screen bg-[#000] text-[#E9EDEF]">
       <ProfileComponent preloadedUserInfo={preloadedUserInfo} />
     </div>
   )
