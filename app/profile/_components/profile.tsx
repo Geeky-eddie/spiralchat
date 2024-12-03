@@ -117,7 +117,7 @@ export default function ProfileComponent({ preloadedUserInfo }: {
               <AvatarImage src={userInfo?.profileImage} alt={userInfo?.name || ""} />
               <AvatarFallback>{userInfo?.name}</AvatarFallback>
             </Avatar>
-            <label htmlFor="profile-image" className="absolute bottom-0 right-0 bg-[#00A884] rounded-full p-2 cursor-pointer">
+            <label htmlFor="profile-image" className="absolute bottom-0 right-0 bg-red-700 rounded-full p-2 cursor-pointer">
               <Camera className="w-6 h-6 text-[#000]" />
               <input
                 id="profile-image"
@@ -144,7 +144,7 @@ export default function ProfileComponent({ preloadedUserInfo }: {
                       handleSubmit(onSubmit)
                     }}
                   />
-                  <Button type="submit" size="sm" className="bg-[#00A884] hover:bg-[#00957B]">
+                  <Button type="submit" size="sm" className="bg-red-700 hover:bg-red-800">
                     Save
                   </Button>
                 </form>
@@ -152,7 +152,7 @@ export default function ProfileComponent({ preloadedUserInfo }: {
                 <div className="flex justify-between items-center mt-1">
                   <span className="text-[#E9EDEF]">{userInfo?.name}</span>
                   <Button variant="ghost" size="sm" onClick={() => setIsEditing(true)}>
-                    <Edit2 className="h-5 w-5 text-[#00A884]" />
+                    <Edit2 className="h-5 w-5 text-red-700" />
                   </Button>
                 </div>
               )}
